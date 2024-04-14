@@ -201,7 +201,7 @@ func categorizeImage(analysis ImageAnalysis) (bool, string) {
 		tags[tag.Name] = tag.Confidence
 	}
 
-	if tags["outdoor"] < 0.8 || tags["nature"] < 0.8 {
+	if tags["outdoor"] < 0.8 && tags["nature"] < 0.8 {
 		issues = append(issues, "!outdoor&&!nature")
 	}
 	if tags["mountain"] < 0.8 && tags["hill"] < 0.8 {
